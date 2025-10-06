@@ -6,8 +6,8 @@ const client = new Client({
     partials: ['CHANNEL'] // required for DM support
 });
 
-const token = 'MTQyNDY3MzQxODE2NjY2OTM2Mw.GdPO9h.MP-gMuvDNtFfKOTQWOhnLDv-gIfc5GlErQGPHc';
-const clientId = '1424673418166669363';
+const token = process.env.TOKEN;
+const clientId = process.env.CLIENT_ID;
 
 const commands = [
     new SlashCommandBuilder()
@@ -38,5 +38,6 @@ client.on('interactionCreate', async (interaction) => {
         }
     }
 });
+
 
 client.login(token);
